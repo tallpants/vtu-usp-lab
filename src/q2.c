@@ -3,6 +3,10 @@
  * options supported on any given system using feature test macros
  */
 
+/*
+ * _POSIX feature test macros are defined in <unistd.h>
+ */
+
 #include <stdio.h>
 #include <unistd.h>
 
