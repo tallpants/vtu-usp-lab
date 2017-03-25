@@ -3,15 +3,19 @@
  */
 
 /*
- * Each entry in the environ array points to a string of the form "KEY=VALUE".
+ * environ - user environment
+ * ============================
  *
- * The last entry in environ points to NULL
+ * extern char **environ
+ *
+ * Each entry in the environ array points to a string of the form "KEY=VALUE".
+ * The last entry in environ points to NULL.
  */
 
 #include <stdio.h>
-#include <stdlib.h>
 
 int main(void) {
+
     int i;
     extern char **environ;
 

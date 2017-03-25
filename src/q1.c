@@ -9,28 +9,33 @@
 
 /*
  * sysconf - get configuration information at run time
+ * ====================================================
  *
  * #include <unistd.h>
  *
  * long sysconf(int name);
  *
- * Gets value for configuration option 'name'. Returns -1 if not defined.
+ * Gets value for configuration option 'name'.
+ * Returns -1 if not defined.
  */
 
 /*
  * pathconf - get configuration values for files
+ * ==============================================
  *
  * #include <unistd.h>
  *
  * long pathconf(const char *path, int name);
  *
- * Gets value for configuration option 'name' for the filename 'path'. Returns -1 if not defined.
+ * Gets value for configuration option 'name' for the filename 'path'.
+ * Returns -1 if not defined.
  */
 
 #include <stdio.h>
 #include <unistd.h>
 
 int main(void) {
+
     printf("\nsysconf\n");
     printf("========\n");
     printf("_SC_OPEN_MAX: The maximum number of files that a process can open is %ld\n", sysconf(_SC_OPEN_MAX));
