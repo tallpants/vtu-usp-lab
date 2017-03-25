@@ -1,4 +1,4 @@
-/**
+/*
  * Write a C/C++ POSIX compliant program to check the following limits:
  * 1. No. of clock ticks
  * 2. Max no. of child processes
@@ -7,7 +7,7 @@
  * 5. Max no. of open files/processes
  */
 
-/**
+/*
  * sysconf - get configuration information at run time
  *
  * #include <unistd.h>
@@ -17,7 +17,7 @@
  * Gets value for configuration option 'name'. Returns -1 if not defined.
  */
 
-/**
+/*
  * pathconf - get configuration values for files
  *
  * #include <unistd.h>
