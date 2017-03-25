@@ -6,3 +6,4 @@ set(CMAKE_C_STANDARD 99)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 add_executable(q1 src/q1.c)
+add_executable(q2 src/q2.c)
