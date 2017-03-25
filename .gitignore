@@ -1,3 +1,7 @@
-cmake-build-debug/
 .idea/
-build/
+bin/
+CMakeFiles/
+cmake_install.cmake
+CMakeCache.txt
+Makefile
+vtu_usp_lab.cbp
