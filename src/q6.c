@@ -11,12 +11,62 @@
  * wait for the other to terminate.
  */
 
+/*
+ * fork - create a child process
+ * ==============================
+ *
+ * #include <unistd.h>
+ *
+ * pid_t fork(void);
+ *
+ * Creates a new process by duplicating the calling process. The child
+ * process is run in a separate memory space but duplictes the parent's
+ * memory space.
+ *
+ * Returns PID of the child process in the parent, 0 in the child, or
+ * -1 on failure to create and errno is set appropriately.
+ */
+
+/*
+ * setbuf - stream buffering operations
+ * =====================================
+ * 
+ * #include <stdio.h>
+ *
+ * void setbuf(FILE* stream, char* buf);
+ * 
+ * Uses the buffer 'buf' as the buffer for the stream 'stream'.
+ * If 'buf' is NULL, then 'stream' will be treated as unbuffered.
+ */
+
+/*
+ * putc - output of characters
+ * ============================
+ *
+ * #include <stdio.h>
+ * 
+ * int putc(int c, FILE* stream);
+ *
+ * Writes the character 'c' to 'stream'
+ */
+
+/*
+ * stdout - standard I/O stream
+ * ============================
+ *
+ * #include <stdio.h>
+ *
+ * extern FILE *stdout;
+ *
+ * A stream representing the standard output STDOUT
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
-#include <sys/types.h>
 #include <unistd.h>
 
-static void charAtATime(char*);
+// Streams the string argument to STDOUT one character at a time
+static void streamCharacters(char*);
 
 int main(void) {
     pid_t pid;
@@ -24,22 +74,25 @@ int main(void) {
     if ((pid = fork()) < 0) {
         printf("\nError forking\n");
         exit(1);
-    } else if (pid == 0) {
-        charAtATime("Output from child\n");
-    } else {
-        charAtATime("Output from parent\n");
-    }
+    } else if (pid == 0)
+        streamCharacters("Output from child\n");
+    else
+        streamCharacters("Output from parent\n");
 
     return 0;
 }
 
-static void charAtATime(char* str) {
-    char* ptr;
-    int c;
+static void streamCharacters(char* str) {
 
+    // Set stdout to be unbuffered
+    extern FILE* stdout;
     setbuf(stdout, NULL);
 
-    for(ptr = str; (c = *ptr++) != 0;) {
+    int c;
+
+    // Print the string to STDOUT one character at a time
+    while((c = *str++) != 0) {
         putc(c, stdout);
     }
+
 }
