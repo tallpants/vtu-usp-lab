@@ -40,17 +40,6 @@
  */
 
 /*
- * putc - output of characters
- * ============================
- *
- * #include <stdio.h>
- * 
- * int putc(int c, FILE* stream);
- *
- * Writes the character 'c' to 'stream'
- */
-
-/*
  * stdout - standard I/O stream
  * ============================
  *
@@ -64,6 +53,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <string.h>
 
 // Streams the string argument to STDOUT one character at a time
 void streamCharacters(char*);
@@ -88,11 +78,8 @@ void streamCharacters(char* str) {
     extern FILE* stdout;
     setbuf(stdout, NULL);
 
-    int c;
-
-    // Print the string to STDOUT one character at a time
-    while((c = *str++) != 0) {
-        putc(c, stdout);
+    for (int i = 0; i < strlen(str); i++) {
+        printf("%c", str[i]);
     }
 
 }
