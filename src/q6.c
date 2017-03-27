@@ -66,7 +66,7 @@
 #include <unistd.h>
 
 // Streams the string argument to STDOUT one character at a time
-static void streamCharacters(char*);
+void streamCharacters(char*);
 
 int main(void) {
     pid_t pid;
@@ -82,7 +82,7 @@ int main(void) {
     return 0;
 }
 
-static void streamCharacters(char* str) {
+void streamCharacters(char* str) {
 
     // Set STDOUT to be unbuffered
     extern FILE* stdout;
