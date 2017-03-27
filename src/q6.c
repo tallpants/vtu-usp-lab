@@ -71,7 +71,7 @@ static void streamCharacters(char*);
 int main(void) {
     pid_t pid;
 
-    if ((pid = fork()) < 0) {
+    if ((pid = fork()) == -1) {
         printf("\nError forking\n");
         exit(1);
     } else if (pid == 0)
