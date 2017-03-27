@@ -37,7 +37,7 @@ int main(void) {
 #endif
 
 #ifdef _POSIX_VDISABLE
-    printf("\n_POSIX_VDISABLE: The virtual disabling character for terminal files is %c", _POSIX_VDISABLE);
+    printf("\n_POSIX_VDISABLE: The virtual disabling character for terminal files is defined %c\n", _POSIX_VDISABLE);
 #else
     printf("\n_POSIX_VDISABLE: Not defined.");
 #endif
