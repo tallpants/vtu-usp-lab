@@ -84,7 +84,7 @@ int main(void) {
 
 static void streamCharacters(char* str) {
 
-    // Set stdout to be unbuffered
+    // Set STDOUT to be unbuffered
     extern FILE* stdout;
     setbuf(stdout, NULL);
 
