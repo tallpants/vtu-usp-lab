@@ -40,7 +40,6 @@
  *       with the current terminal are shown).
  */
 
-#include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
 
