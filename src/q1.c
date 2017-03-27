@@ -45,7 +45,8 @@ int main(void) {
     printf("\npathconf\n");
     printf("=========\n");
     printf("_PC_NAME_MAX: The maximum length of a filename in directory '/' is %ld\n", pathconf("/", _PC_NAME_MAX));
-    printf("_PC_PATH_MAX: The maximum length of a relative pathname when '/' is the current working directory is: %ld\n", pathconf("/", _PC_PATH_MAX));
+    printf("_PC_PATH_MAX: The maximum length of a relative pathname when '/' is the current working directory is:"
+                   " %ld\n", pathconf("/", _PC_PATH_MAX));
 
     return 0;
 }
