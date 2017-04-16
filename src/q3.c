@@ -6,6 +6,18 @@
  * region.
  */
 
+/*
+adithya@tidehunter  ~/Projects/vtu-usp-lab/bin   master ●  ./q3 file.txt
+The process with PID 2584 has locked the file file.txt
+The last 50 bytes are: 
+wxrwxr-x 1 adithya adithya 8752 Apr 16 07:15 q7
+
+Press any key to unlock.
+
+adithya@tidehunter  ~/Projects/vtu-usp-lab/bin   master ●  ./q3 file.txt
+The file file.txt is already locked with process PID 2584
+ */
+
 #include <stdio.h>
 #include <unistd.h>
 #include <fcntl.h>
