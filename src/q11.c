@@ -3,6 +3,59 @@
  * of "if E then S1" and "if E then S1 else S2".
  */
 
+/*
+ * $ ./a.out          
+ * Examples: 
+ * if (a<b) then (s=a)
+ * if (a<b) then (s=a) else (s=b)
+ * 
+ * Enter a statement: if (a<b) then (s=a)
+ * 
+ * Syntax Driven Definition:
+ * --------------------------
+ * 
+ * if (a<b)
+ *   goto 101
+ * 
+ * 101: (s=a)
+ * 102: ...
+ * 
+ * $ ./a.out          
+ * Examples: 
+ * if (a<b) then (s=a)
+ * if (a<b) then (s=a) else (s=b)
+ * 
+ * Enter a statement: if (a<b) then (s=a) else (s=b)
+ * 
+ * Syntax Driven Definition:
+ * --------------------------
+ * 
+ * if (a<b)
+ *   goto 101
+ * goto 102
+ * 
+ * 101: (s=a)
+ * 102: (s=b)
+ * 103: ...
+ */
+
+/*
+ * strtok - extract tokens from strings
+ * =====================================
+ *
+ * #include <string.h>
+ *
+ * char *strtok(char *str, const char *delim);
+ *
+ * This function breaks a string into a sequence of tokens. On the first
+ * call the string to be parsed should be specified in str. In each
+ * subsequent call that should parse the same string, str must be NULL.
+ *
+ * Each call to strtok() returns a pointer to a string containing the next
+ * token (excluding the delimiter). If no more tokens are found, NULL
+ * is returned.
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -13,16 +66,15 @@ struct token_list {
 } list;
 
 /**
- * [tokenize description]
- * @param string [description]
+ * Divides the string into tokens using spaces as the delimiter, and
+ * stores the tokens in the struct list.
  */
 void tokenize(char* string);
 
 /**
- * [print_sdd description]
- * @param E  [description]
- * @param S1 [description]
- * @param S2 [description]
+ * Prints the syntax directed definition.
+ * If S2 does not exist (i.e there is no else part), then it should be
+ * passed as NULL.
  */
 void print_sdd(char* E, char* S1, char* S2);
 
