@@ -40,17 +40,21 @@
  *       with the current terminal are shown).
  */
 
+#include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
 
 int main(void) {
     pid_t pid = fork();
 
-    if (pid == 0)
+    if (pid == 0) {
+        printf("Parent PID: %d\n", getppid());
+        printf("Child PID: %d\n\n", getpid());
         exit(0);
-    else
+    } else
         sleep(3);
 
-    system("ps -A | grep q7");
+    printf("PID\tPPID\tStatus\n");
+    system("ps -O ppid,stat | grep q7");
     return 0;
 }
