@@ -4,36 +4,36 @@
  */
 
 /*
- * $ ./a.out          
- * Examples: 
+ * $ ./a.out
+ * Examples:
  * if (a<b) then (s=a)
  * if (a<b) then (s=a) else (s=b)
- * 
+ *
  * Enter a statement: if (a<b) then (s=a)
- * 
+ *
  * Syntax Driven Definition:
  * --------------------------
- * 
+ *
  * if (a<b)
  *   goto 101
- * 
+ *
  * 101: (s=a)
  * 102: ...
- * 
- * $ ./a.out          
- * Examples: 
+ *
+ * $ ./a.out
+ * Examples:
  * if (a<b) then (s=a)
  * if (a<b) then (s=a) else (s=b)
- * 
+ *
  * Enter a statement: if (a<b) then (s=a) else (s=b)
- * 
+ *
  * Syntax Driven Definition:
  * --------------------------
- * 
+ *
  * if (a<b)
  *   goto 101
  * goto 102
- * 
+ *
  * 101: (s=a)
  * 102: (s=b)
  * 103: ...
@@ -125,14 +125,14 @@ void tokenize(char* string) {
 }
 
 void print_sdd(char* E, char* S1, char* S2) {
-
     printf("\nif %s\n", E);
     printf("  goto 101\n");
-    if (S2) printf("goto 102\n");
+    printf("goto 102\n");
 
     printf("\n101: %s", S1);
 
     if (S2) {
+        printf("\n     goto 103");
         printf("\n102: %s", S2);
         printf("103: ...\n");
     } else {
