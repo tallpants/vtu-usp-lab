@@ -34,3 +34,13 @@ _PC_NAME_MAX: The maximum length of a filename in directory '/' is 255
 _PC_PATH_MAX: The maximum length of a relative pathname when '/' is the current working directory is: 4096
 
 ```
+
+### Question 12
+
+Since q12 is a Yacc program you need to install Yacc (or Bison) and Lex (or Flex) and build it manually:
+
+```
+$ yacc src/q12.y
+$ cc y.tab.c -o bin/q12
+$ ./bin/q12
+```
