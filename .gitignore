@@ -7,3 +7,4 @@ Makefile
 vtu_usp_lab.cbp
 build/
 .vscode/
+y.tab.c
