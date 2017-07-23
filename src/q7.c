@@ -48,13 +48,13 @@ int main(void) {
     pid_t pid = fork();
 
     if (pid == 0) {
-        printf("Parent PID: %d\n", getppid());
-        printf("Child PID: %d\n\n", getpid());
+        // Child
         exit(0);
-    } else
-        sleep(3);
+    } else {
+        // Parent
+        sleep(1);
+        system("ps -o pid,ppid,stat,cmd");
+    }
 
-    printf("PID\tPPID\tStatus\n");
-    system("ps -O ppid,stat | grep q7");
     return 0;
 }
